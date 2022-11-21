@@ -239,32 +239,34 @@ let emails = {
 
 let other = []
 
-for (item of users) {
-    let key = item.email.split('.').at(-1)
+// for (item of users) {
+//     let key = item.email.split('.').at(-1)
 
-    if (key === 'org') {
-        emails.org.push(item)
-    } else if (key === 'net') {
-        emails.net.push(item)
-    } else if (key === 'info') {
-        emails.info.push(item)
-    } else {
-        other.push(item)
-    }
-}
-
-console.log(emails, other);
-
-// for (let i = users; i <= users; i++) {
-//     if (i === 'org') {
-//         emails.org.push(i)
-//     } else if (i === 'net') {
-//         emails.net.push(i)
-//     } else if (i === 'info') {
-//         emails.info.push(i)
+//     if (key === 'org') {
+//         emails.org.push(item)
+//     } else if (key === 'net') {
+//         emails.net.push(item)
+//     } else if (key === 'info') {
+//         emails.info.push(item)
 //     } else {
-//         other.push(i)
+//         other.push(item)
 //     }
 // }
 
 // console.log(emails, other);
+
+for (let item = 0; item <= users.length - 1; item++) {
+    let key = users[item].email.split('.').at(-1)
+
+    if (key === 'org') {
+        emails.org.push(users[item])
+    } else if (key === 'net') {
+        emails.net.push(users[item])
+    } else if (key === 'info') {
+        emails.info.push(users[item])
+    } else {
+        other.push(users[item])
+    }
+}
+
+console.log(emails, other);
